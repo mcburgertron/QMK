@@ -1,6 +1,8 @@
 #include QMK_KEYBOARD_H
 #include "mousekey.h"
 
+extern mousekey_config_t mousekey_config;  // Allows runtime changes
+
 // ─────────────────────────────────────────────────────────────────────────────
 // LAYERS
 enum layer_names {
@@ -145,22 +147,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ENCODER UPDATE EXAMPLE
-// Left encoder => volume, Right encoder => track
+// ENCODER UPDATE
+// Left encoder => volume, Right encoder => mouse speed
 // ─────────────────────────────────────────────────────────────────────────────
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
+        // For example: Left encoder => volume
         if (clockwise) {
             tap_code(KC_VOLD);
         } else {
             tap_code(KC_VOLU);
         }
     } else if (index == 1) {
+        // Right encoder => speed up or slow down the mouse turning
         if (clockwise) {
-            tap_code(KC_MNXT);
+            // Increase max_speed up to some cap, e.g., 15
+            if (mousekey_config.max_speed < 1) {
+                mousekey_config.max_speed--;
+            }
         } else {
-            tap_code(KC_MPRV);
+            // Decrease max_speed down to a min of 1
+            if (mousekey_config.max_speed < 15) {
+                mousekey_config.max_speed++;
+            }
         }
+        
+        // Optional: Provide user feedback (e.g., debug print)
+        // uprintf("Mouse max_speed: %u\n", mousekey_config.max_speed);
     }
     return false;
 }
