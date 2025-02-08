@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______,
 
         // Row 2
-        KC_LCTL, KC_LALT, KC_TAB, LCTL(KC_SPC),
+        KC_LSFT, KC_LALT, KC_TAB, LCTL(KC_SPC),
 
         // Row 3
         _______, _______, _______, _______)};
