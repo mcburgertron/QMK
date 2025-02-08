@@ -62,9 +62,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* ─────────────────────────────────────────────────────────────────────────
      * LAYER 4: placeholder
      */
-    [_LAYER4] = LAYOUT(KC_NO, KC_NO,
+    [_LAYER4] = LAYOUT(
+        // Encoder press positions (unused => KC_NO)
+        KC_NO, KC_NO,
 
-                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, LCTL(KC_SPC))};
+        // Row 0
+        _______, _______, _______, _______,
+
+        // Row 1
+        _______, _______, _______, _______,
+
+        // Row 2
+        KC_M, KC_LALT, KC_TAB, LCTL(KC_SPC),
+
+        // Row 3
+        _______, _______, _______, _______)};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // process_record_user: handle macros & camera turns
