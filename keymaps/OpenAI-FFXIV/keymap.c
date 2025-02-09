@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(KC_NO, TO(_OH_BASE),                                 // Encoder presses (unused)
                      KC_Q, KC_W, KC_E, CAM_L,                             // Row0
                      KC_A, KC_S, KC_D, CAM_R,                             // Row1
-                     LCTL(KC_SPC), KC_M, KC_ESC, KC_SPC,                  // Row2
+                     KC_LCTL, KC_M, KC_ESC, KC_SPC,                  // Row2
                      MO(_HOTBAR1), MO(_LAYER2), MO(_LAYER3), MO(_HOTBAR2) // Row3
                      ),
 
