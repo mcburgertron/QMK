@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(KC_NO, TO(_OH_BASE),                                 // Encoder presses (unused)
                      KC_Q, KC_W, KC_E, CAM_L,                             // Row0
                      KC_A, KC_S, KC_D, CAM_R,                             // Row1
-                     KC_MS_BTN3, KC_M, KC_ESC, KC_SPC,                    // Row2
+                     LCTL(KC_SPC), KC_M, KC_ESC, KC_SPC,                  // Row2
                      MO(_HOTBAR1), MO(_LAYER2), MO(_LAYER3), MO(_HOTBAR2) // Row3
                      ),
 
@@ -71,11 +71,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* ─────────────────────────────────────────────────────────────────────────
      * LAYER 3: Placeholder (unchanged)
      */
-    [_LAYER3] = LAYOUT(KC_NO, KC_NO,                           //
-                       _______, _______, _______, _______,     //
-                       _______, _______, _______, _______,     //
-                       KC_LSFT, KC_LALT, KC_TAB, LCTL(KC_SPC), //
-                       _______, _______, _______, _______      //
+    [_LAYER3] = LAYOUT(KC_NO, KC_NO,                       //
+                       _______, _______, _______, _______, //
+                       _______, _______, _______, _______, //
+                       KC_LSFT, KC_LALT, KC_TAB, MS_BTN3,  //
+                       _______, _______, _______, _______  //
                        ),
 
     /* ─────────────────────────────────────────────────────────────────────────
