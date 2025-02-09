@@ -161,14 +161,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // 1) Convert "if (keycode == KC_SPC)" to case statements
-        case KC_SPC:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_CTRL) {
-                    tap_code(KC_ENT);
-                    return false; // skip normal Space output
-                }
-            }
-            break; // break out of case
+        //case KC_SPC:
+        //    if (record->event.pressed) {
+        //        if (get_mods() & MOD_MASK_CTRL) {
+        //            tap_code(KC_ENT);
+        //            return false; // skip normal Space output
+        //        }
+        //    }
+        //    break; // break out of case
 
         // 2) Convert "if (keycode == TOG_ONEHAND)" to case statements
         case TOG_ONEHAND:
