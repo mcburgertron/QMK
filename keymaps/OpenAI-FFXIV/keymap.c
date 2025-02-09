@@ -59,16 +59,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         ),
 
     /* ─────────────────────────────────────────────────────────────────────────
-     * LAYER 4: HOTBAR2 (unchanged)
-     */
-    [_HOTBAR2] = LAYOUT(KC_NO, KC_NO,                                        //
-                        LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4),      //
-                        LCTL(KC_5), LCTL(KC_6), LCTL(KC_7), LCTL(KC_8),      //
-                        LCTL(KC_9), LCTL(KC_0), LCTL(KC_MINS), LCTL(KC_EQL), //
-                        _______, _______, _______, _______                   //
-                        ),
-
-    /* ─────────────────────────────────────────────────────────────────────────
      * LAYER 2: Placeholder (unchanged)
      */
     [_LAYER2] = LAYOUT(KC_NO, KC_NO,                       //
@@ -87,6 +77,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                        KC_LSFT, KC_LALT, KC_TAB, LCTL(KC_SPC), //
                        _______, _______, _______, _______      //
                        ),
+
+    /* ─────────────────────────────────────────────────────────────────────────
+     * LAYER 4: HOTBAR2 (unchanged)
+     */
+    [_HOTBAR2] = LAYOUT(KC_NO, KC_NO,                                        //
+                        LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4),      //
+                        LCTL(KC_5), LCTL(KC_6), LCTL(KC_7), LCTL(KC_8),      //
+                        LCTL(KC_9), LCTL(KC_0), LCTL(KC_MINS), LCTL(KC_EQL), //
+                        _______, _______, _______, _______                   //
+                        ),
 
     /* ─────────────────────────────────────────────────────────────────────────
      * LAYER 10: One-Handed Base Layer
