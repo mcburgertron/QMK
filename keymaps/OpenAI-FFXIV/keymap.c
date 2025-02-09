@@ -11,12 +11,15 @@ enum layer_names {
     _LAYER3,   //
     _HOTBAR2,  //
     // One-handed keyboard mode layers:
-    _OH_BASE = 10, // Primary one-hand letters & modifiers
-    _OH_SYM,       // Symbols & Numbers (accessed via LT on Alt key)
-    _OH_NAV,       // Navigation (toggled by left encoder)
-    _OH_MIR,       // Mirror letters (accessed via LT on Space key)
-    _OH_EX,        // Extra letters/punctuation (missing letters: R, Z, X, V, plus punctuation)
-    _OH_FN         // Function & Media keys
+    _OH_BASE, // Primary one-hand letters & modifiers
+    _OH_SYM,  // Symbols & Numbers (accessed via LT on Alt key)
+    _OH_NAV,  // Navigation (toggled by left encoder)
+    _OH_MIR,  // Mirror letters (accessed via LT on Space key)
+    _OH_EX,   // Extra letters/punctuation (missing letters: R, Z, X, V, plus punctuation)
+    _OH_FN,   // Function & Media keys
+    // RPGMaker
+    _OH_RPG,    // Main
+    _OH_RPG_NUM // RPG Numbers
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -41,10 +44,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* ─────────────────────────────────────────────────────────────────────────
      * LAYER 0: BASE (Game mode – unchanged)
      */
-    [_BASE] = LAYOUT(KC_NO, TO(_OH_BASE),                                 // Encoder presses (unused)
+    [_BASE] = LAYOUT(TO(_OH_RPG), TO(_OH_BASE),                           // Encoder presses (unused)
                      KC_Q, KC_W, KC_E, CAM_L,                             // Row0
                      KC_A, KC_S, KC_D, CAM_R,                             // Row1
-                     KC_LCTL, KC_M, MT(MOD_LSFT, KC_ESC), KC_SPC,                  // Row2
+                     KC_LCTL, KC_M, MT(MOD_LSFT, KC_ESC), KC_SPC,         // Row2
                      MO(_HOTBAR1), MO(_LAYER2), MO(_LAYER3), MO(_HOTBAR2) // Row3
                      ),
 
@@ -74,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_LAYER3] = LAYOUT(KC_NO, KC_NO,                       //
                        _______, _______, _______, _______, //
                        _______, _______, _______, _______, //
-                       KC_LSFT, KC_LALT, KC_TAB, MS_BTN3,  //
+                       KC_TAB, KC_LSFT, KC_LALT, MS_BTN3,  // m
                        _______, _______, _______, _______  //
                        ),
 
@@ -95,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * - Encoder left: TG(_OH_NAV) toggles Navigation.
      * - Encoder right: TO(_BASE) returns to game mode.
      */
-    [_OH_BASE] = LAYOUT((KC_NO), TO(_BASE), // Encoder buttons
+    [_OH_BASE] = LAYOUT(TO(_OH_RPG), TO(_BASE), // Encoder buttons
                         /* Row0 (Top row, group1): */ KC_Q, KC_W, KC_E, KC_R,
                         /* Row1 (Home row, group1): */ KC_A, KC_S, KC_D, KC_F,
                         /* Row2 (Bottom row, group1): */ KC_Z, KC_X, KC_C, KC_V,
@@ -152,7 +155,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_F5, KC_F6, KC_F7, KC_F8,        // Row1
                       KC_F9, KC_F10, KC_F11, KC_F12,     // Row2
                       KC_MPLY, KC_MNXT, KC_MPRV, KC_MUTE // Row3
-                      )                                  //
+                      ),                                 //
+
+    /* ─────────────────────────────────────────────────────────────────────────
+     * LAYER 16: RPGMaker.
+
+     */
+
+    [_OH_RPG] = LAYOUT(TO(_BASE), TO(_OH_BASE),                   // Encoder presses (unused)
+                       KC_ESC, KC_UP, KC_F4, KC_LSFT,             // Row0
+                       KC_LEFT, KC_DOWN, KC_RIGHT, KC_ENTER,      // Row1
+                       KC_Z, KC_X, KC_C, KC_V,                    // Row2
+                       _______, _______, _______, MO(_OH_RPG_NUM) // Row3
+                       ),
+
+    /* ─────────────────────────────────────────────────────────────────────────
+     * LAYER 17: RPGMaker numbers.
+     */
+    [_OH_RPG_NUM] = LAYOUT(KC_NO, KC_NO,                      //
+                           KC_1, KC_2, KC_3, KC_4,            //
+                           KC_5, KC_6, KC_7, KC_8,            //
+                           KC_9, KC_0, KC_MINS, KC_EQL,       //
+                           _______, _______, _______, _______ //
+                           )
+
 }; //
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -161,7 +187,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // 1) Convert "if (keycode == KC_SPC)" to case statements
-        //case KC_SPC:
+        // case KC_SPC:
         //    if (record->event.pressed) {
         //        if (get_mods() & MOD_MASK_CTRL) {
         //            tap_code(KC_ENT);
