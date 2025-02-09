@@ -266,10 +266,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         case _HOTBAR2:
             rgblight_sethsv_noeeprom(0, 255, 128); // Red
             break;
-        case _LAYER3:
+        case _LAYER2:
             rgblight_sethsv_noeeprom(200, 255, 128); // Purple
             break;
-        case _LAYER4:
+        case _LAYER3:
             rgblight_sethsv_noeeprom(32, 255, 128); // Orange
             break;
 
