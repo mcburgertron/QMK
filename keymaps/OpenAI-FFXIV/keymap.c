@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* ─────────────────────────────────────────────────────────────────────────
      * LAYER 2: Placeholder (unchanged)
      */
-    [_LAYER2] = LAYOUT(KC_NO, KC_NO,                       //
+    [_LAYER2] = LAYOUT(QK_BOOTLOADER, KC_NO,                       //
                        _______, _______, _______, _______, //
                        _______, _______, _______, _______, //
                        _______, _______, _______, _______, //
