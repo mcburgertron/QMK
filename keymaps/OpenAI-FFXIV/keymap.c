@@ -64,21 +64,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* ─────────────────────────────────────────────────────────────────────────
      * LAYER 2: Placeholder (unchanged)
      */
-    [_LAYER2] = LAYOUT(QK_BOOTLOADER, KC_NO,                       //
-                       _______, _______, _______, _______, //
-                       _______, _______, _______, _______, //
-                       _______, _______, _______, _______, //
-                       _______, _______, _______, _______  //
+    [_LAYER2] = LAYOUT(QK_BOOTLOADER, KC_NO,                                //
+                       LALT(KC_1), LALT(KC_2), LALT(KC_3), LALT(KC_4),      //
+                       LALT(KC_5), LALT(KC_6), LALT(KC_7), LALT(KC_8),      //
+                       LALT(KC_9), LALT(KC_0), LALT(KC_MINS), LALT(KC_EQL), //
+                       _______, _______, _______, _______                   //
                        ),
 
     /* ─────────────────────────────────────────────────────────────────────────
      * LAYER 3: Placeholder (unchanged)
      */
-    [_LAYER3] = LAYOUT(KC_NO, KC_NO,                       //
-                       _______, _______, _______, _______, //
-                       _______, _______, _______, _______, //
-                       KC_TAB, KC_LSFT, KC_LALT, MS_BTN3,  // m
-                       _______, _______, _______, _______  //
+    [_LAYER3] = LAYOUT(KC_NO, KC_NO,                                    //
+                       LCA(KC_1), LCA(KC_2), LCA(KC_3), LCA(KC_4),      //
+                       LCA(KC_5), LCA(KC_6), LCA(KC_7), LCA(KC_8),      //
+                       LCA(KC_9), LCA(KC_0), LCA(KC_MINS), LCA(KC_EQL), //
+                       _______, _______, _______, _______               //
                        ),
 
     /* ─────────────────────────────────────────────────────────────────────────
