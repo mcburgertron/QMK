@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                      KC_Q, KC_W, KC_E, CAM_L,                             // Row0
                      KC_A, KC_S, KC_D, CAM_R,                             // Row1
                      KC_LCTL, KC_M, MT(MOD_LSFT, KC_ESC), KC_SPC,         // Row2
-                     MO(_HOTBAR1), MO(_LAYER2), MO(_LAYER3), MO(_HOTBAR2) // Row3
+                     LT(_HOTBAR1, KC_F1), LT(_LAYER2, KC_F2), LT(_LAYER3, KC_F3), LT(_HOTBAR2, KC_F4) // Row3
                      ),
 
     /* ─────────────────────────────────────────────────────────────────────────
