@@ -1,1 +1,14 @@
 AGENTS.md
+
+# Build artifacts
+.build/
+*.hex
+*.bin
+*.elf
+*.map
+*.eep
+
+# Local environments
+.venv/
+venv/
+.env
